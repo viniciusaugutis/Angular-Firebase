@@ -1,0 +1,9 @@
+<ul class="collection with-header no-border">
+    <li class="collection-header"><h4>Chat <i class="material-icons">chat</i></h4></li>
+    <li class="collection-item" *ngFor="let msg of messages">
+        <strong class="title capitalize">{{ msg.nick }} </strong> <i>disse:</i>
+        <small [innerHtml]="msg.text"></small>
+    </li>
+</ul>
+
+<input type="text" placeholder="Digite aqui..." [(ngModel)]="sendMsg" (keyup.enter)="onEnter($event)" class="input-msg">

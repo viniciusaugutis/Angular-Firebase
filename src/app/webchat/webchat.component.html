@@ -1,0 +1,31 @@
+<div class="navbar-fixed">
+  <nav class="blue-grey darken-2">
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo center">UTFWare 2017</a>
+        <ul class="right hide-on-med-and-down">
+          <li class="active" *ngIf="nickname"><a href="#!"><i class="material-icons right">account_circle</i> &nbsp; Olá {{ nickname }}</a></li>
+        </ul>
+      </div>
+  </nav>
+</div>
+
+<br>
+<section [hidden]="nickname">
+  <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s8 offset-s2">
+            <input id="nick" type="text" placeholder="Digite seu nickname para continuar..." #nick (keyup)="onKeyUp($event)">
+            <label for="nick">Nickname</label>
+          </div>
+          <div class="input-field col s8 offset-s2 right-align">
+              <button class="btn btn-large waves-effect waves-light" [disabled]="!nick.value" (click)="continueWithNickname(nick.value)">Entrar 
+                <i class="material-icons right">send</i>
+              </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <webchat-msg *ngIf="nickname" [nick] = "nickname"></webchat-msg>
