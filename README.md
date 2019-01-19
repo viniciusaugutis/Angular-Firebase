@@ -1,4 +1,14 @@
-# WebchatUtfware2017
+# Angular Firebase
+
+## Description
+
+This app aims to create a chat using Angular and Google Firebase.
+
+#Technologies
+- Angular
+- Firebase
+
+#To run
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
